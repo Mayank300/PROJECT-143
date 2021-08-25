@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./screens/HomeScreen";
+import TopTab from "./navigation/TopTab";
 
 const Stack = createStackNavigator();
 
@@ -12,9 +12,9 @@ export default function App() {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={"Onboarding"}
+        initialRouteName={"TopTab"}
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="TopTab" component={TopTab} />
       </Stack.Navigator>
     </NavigationContainer>
   );

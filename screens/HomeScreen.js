@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import axios from "axios";
 
 export default class HomeScreen extends Component {
   state = {
     articleDetails: {},
-    url: "http://localhost:5000",
+    url: "https://554a-103-77-37-130.ngrok.io",
   };
 
   getArticle = () => {
@@ -16,6 +16,7 @@ export default class HomeScreen extends Component {
         articleDetails: details,
       });
     });
+    console.log("Home screen : ", this.state.articleDetails);
   };
 
   likeArticle = () => {
@@ -58,12 +59,18 @@ export default class HomeScreen extends Component {
   }
 
   render() {
-    return <View style={styles.container}></View>;
+    return (
+      <View style={styles.container}>
+        <Text> Home Screen</Text>
+      </View>
+    );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
